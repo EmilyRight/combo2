@@ -1,0 +1,109 @@
+.tooltip-block {
+  display: inline;
+  position: absolute;
+  bottom: 0;
+}
+.tooltip {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.4s;
+  bottom: 3.1rem;
+  left: 43%;
+  -webkit-transform: translateX(-43%);
+  transform: translateX(-43%);
+  border-radius: 16px;
+  padding: 1.2rem;
+  background-color: #fff;
+  // background-image: linear-gradient(
+  //   57deg,
+  //   rgba(29, 230, 202, 0.3) 0.01%,
+  //   rgba(29, 228, 202, 0.63) 76.29%
+  // );
+  /* Blur 20 • Cards */
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+  width: 25.6rem;
+  &.opened {
+    z-index: 10;
+    opacity: 1;
+    -webkit-transform: translateX(-43%);
+    transform: translateX(-43%);
+    &::before {
+      opacity: 1;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: #ffffff;
+    bottom: -0.5rem;
+    left: 50%;
+    z-index: 0;
+    transform: translateX(-50%) rotate(45deg);
+    opacity: 0;
+  }
+  &__icon {
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    border: 0.1rem solid $color-dark;
+    border-radius: 50%;
+    padding: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-dark;
+    position: absolute;
+    font-size: 1.6rem;
+    right: -3rem;
+    bottom: 0;
+    cursor: pointer;
+    transition: .4s;
+    &:hover {
+      transform: scale(.8);
+    }
+  }
+  &__text {
+    max-width: 90%;
+    @include text-small;
+  }
+
+  &__close-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: $color-gray;
+    position: absolute;
+    top: 1.2rem;
+    border-radius: 50%;
+    right: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .close {
+    display: block;
+    width: 1.2rem;
+    height: 0.1rem;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1.2rem;
+      height: 0.1rem;
+      background-color: #fff;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

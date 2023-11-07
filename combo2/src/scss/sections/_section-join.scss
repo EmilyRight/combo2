@@ -1,0 +1,203 @@
+.section-join {
+  .section-layer {
+    flex-direction: column;
+  }
+  .join {
+    &__grid-container {
+      margin-bottom: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    &__button {
+      margin-bottom: 0;
+      margin: 0 auto;
+    }
+  }
+
+  .join-item {
+    border-radius: 1.8rem;
+    box-shadow: 0px 0.4rem 2rem 0px rgba(0, 0, 0, 0.08);
+    padding: 1.8rem;
+    &:not(.join-item_first) {
+      .join-item__image {
+        img {
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+    &__image {
+      width: 100%;
+      max-width: 4.6rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__text {
+      font-family: $font1;
+      line-height: 2.2rem;
+      margin: 0;
+    }
+
+    &_first {
+      padding: 2rem 1.8rem 2.4rem 1.8rem;
+      border-radius: 2.5rem;
+      background: linear-gradient(
+        57deg,
+        rgba(255, 89, 163, 0.3) 0.01%,
+        rgba(255, 89, 163, 0.94) 76.29%
+      );
+
+      /* Blur 20 • Cards */
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .join-item__image {
+        min-height: 13rem;
+        align-self: flex-end;
+        margin-right: 0;
+        margin-bottom: 0rem;
+        img {
+          max-width: 100%;
+        }
+        .pic-layer {
+          position: absolute;
+          width: 18rem;
+          &_sim {
+            right: 0%;
+            opacity: 0;
+            z-index: 1;
+          }
+
+          &_shadow {
+            bottom: -8%;
+            right: 3rem;
+            z-index: 0;
+            opacity: 0;
+          }
+          // &_shadow.animated {
+          //   animation: simShadow 1s linear 0s 1 normal forwards;
+          // }
+        }
+      }
+
+      .join-item__title {
+      }
+      .join-item__button {
+        margin-bottom: 0;
+        margin-top: 0.4rem;
+        letter-spacing: 0;
+        margin-right: auto;
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    .section-layer {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+    }
+    .join {
+      &__grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 3.6rem;
+        margin-bottom: 3.6rem;
+      }
+
+      &__button {
+        display: none;
+      }
+    }
+
+    .join-item {
+      border-radius: 2.8rem;
+      box-shadow: 0px 0.4rem 2rem 0px rgba(0, 0, 0, 0.08);
+      padding: 3.6rem;
+      &__image {
+        max-width: 6.4rem;
+        margin-bottom: 2.4rem;
+      }
+
+      &_first {
+        padding: 3.6rem 1.8rem 4.3rem 4.3rem;
+        grid-column: 1/2;
+        grid-row: 1/3;
+        // justify-content: space-between;
+        gap: 2.3rem;
+        .join-item__title {
+          max-width: 80%;
+        }
+
+        .join-item__image {
+          min-height: 19rem;
+          .pic-layer {
+            position: absolute;
+            width: 28rem;
+            &_sim {
+              right: 25%;
+              // opacity: 0;
+              z-index: 1;
+              // animation: sim 1s linear 0s 1 normal forwards;
+            }
+
+            &_shadow {
+              bottom: -10%;
+              right: 3rem;
+              z-index: 0;
+              transform: scaleX(0.2);
+              // animation: simShadow 1s linear 0s 1 normal forwards;
+            }
+          }
+          // &.animated {
+          //   .pic-layer_sim {
+          //     animation: sim 1s linear 0s 1 normal forwards;
+          //   }
+
+          //   .pic-layer_shadow {
+          //     animation: simShadow 1s linear 0s 1 normal forwards;
+          //   }
+          // }
+        }
+      }
+      &__text {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+@keyframes sim {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0.5rem);
+  }
+}
+@keyframes simShadow {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    right: 3rem;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    right: -2.7rem;
+  }
+}

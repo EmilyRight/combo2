@@ -1,0 +1,32 @@
+.section--footer {
+  font-family: $font1;
+  background-color: #f3f5f6;
+  .section-layer {
+    padding: 2.4rem;
+    display: block;
+    .box-content {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      color: $color-gray0;
+      font-size: 1.6rem;
+      line-height: 1.38;
+    }
+
+    .rules {
+      margin-bottom: 1rem;
+      .text-link {
+        text-decoration: underline;
+        color: $color-gray0;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      max-height: 9.2rem;
+      padding: 1.8rem;
+    }
+  }
+}

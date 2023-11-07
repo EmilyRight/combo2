@@ -1,0 +1,15 @@
+.teaser-heading {
+  padding: 1.8rem 0 0.5rem 0;
+  position: relative;
+  z-index: 5;
+  .logo {
+    display: inline-block;
+    width: 6rem;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+

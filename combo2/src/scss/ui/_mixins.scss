@@ -1,0 +1,39 @@
+@mixin text-normal {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+}
+@mixin text-small {
+  font-family: $font1;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+@mixin btn-transparent {
+  display: block;
+  padding: 0.9rem 1.9rem;
+  text-align: center;
+  font-family: $font1b;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 2.4rem;
+  border: 0.2rem solid $color-dark;
+  color: $color-dark;
+  background-color: transparent;
+  transition: 0.3s;
+  &:hover {
+    background-color: transparent;
+    border-color: $color-gray;
+    color: $color-gray;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+}
