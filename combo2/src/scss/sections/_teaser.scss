@@ -134,7 +134,7 @@
         width: auto;
         position: absolute;
         bottom: 0;
-        right: 0;
+        left: 0rem;
         max-height: 100%;
       }
       &_man {
@@ -161,7 +161,7 @@
     }
 
     .teaser-body {
-      max-width: 50%;
+      max-width: 45%;
       margin: 0;
       order: 1;
       &__text {
