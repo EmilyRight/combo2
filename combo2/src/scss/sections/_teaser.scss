@@ -110,7 +110,6 @@
       order: 2;
       position: relative;
       right: -3%;
-
     }
     &__bg {
       display: block;
@@ -125,7 +124,7 @@
       svg {
         max-height: 60vh;
         min-height: 56rem;
-        height: 50vw;
+        height: 55vw;
       }
     }
 
@@ -211,6 +210,11 @@
   @media (min-width: 1267px) {
     &__bg {
       left: 0%;
+    }
+    .pic-layer {
+      img {
+        left: -10rem;
+      }
     }
   }
 }
