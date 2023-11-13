@@ -5,6 +5,7 @@ import { openModal } from './components/modal';
 import GTMEvents from './components/gtmEvents';
 import Animations from './components/animations';
 import handleTooltip from './components/tooltip';
+import pricesData from './pricesData';
 
 const GTM = new GTMEvents();
 const animation = new Animations();
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   openPopup();
   handleTooltip();
   handleFAQopening();
+  setPrices();
 });
 
 // scroll to next section
@@ -30,6 +32,26 @@ function scrollToElement(el) {
   window.scrollTo({ top: y, behavior: 'smooth' }); // element.scrollIntoView();
 }
 
+function stringifyPrice(price) {
+  const priceArray = price.toString().split('');
+  priceArray.splice(-3, 0, ' ');
+  return `${priceArray.join('')}&nbsp;₽`;
+}
+
+function setPrices() {
+  const shopItemList = document.querySelectorAll('.shop-item');
+  shopItemList.forEach((item) => {
+    if (item.id) {
+      const itemObj = pricesData.filter((smartphone) => smartphone.id === item.id)[0];
+      const oldPriceElement = item.querySelector('.price__old');
+      const newPriceElement = item.querySelector('.price__new');
+      const { newPrice, oldPrice } = itemObj;
+
+      oldPriceElement.innerHTML = stringifyPrice(oldPrice);
+      newPriceElement.innerHTML = stringifyPrice(newPrice);
+    }
+  });
+}
 function goNextSection() {
   const goNextBtns = document.querySelectorAll('.js-go-next');
   const sectionsList = document.querySelectorAll('section');
